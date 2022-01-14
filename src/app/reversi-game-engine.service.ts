@@ -86,6 +86,9 @@ ${this.whereCanPlay().map( P => `  * ${P}`).join("\n")}
    * @returns L'état initiale du jeu, avec les 4 pions initiaux bien placés.
    */
   private initGameState(): GameState {
+    let b = getEmptyBoard();
+    b[4][4]= b[3][4] ="Player1";
+    b[3][4]= b[4][3]="Player2";
     return {turn: this.turn, board: this.board};
   }
 
